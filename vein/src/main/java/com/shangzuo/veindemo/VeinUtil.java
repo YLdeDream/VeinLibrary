@@ -176,6 +176,10 @@ public class VeinUtil {
     class GetTempThread extends Thread {
         @Override
         public void run() {
+            if (DevHandle <= 0) {
+                DebugMsg("请先连接设备");
+                return;
+            }
             GetTemp();
         }
     }
@@ -190,7 +194,6 @@ public class VeinUtil {
             } catch (NumberFormatException e) {
                 e.printStackTrace();
             }
-            PlayVoice(VeinApi.XG_VOICE_BEEP11, true);
             if (ret == -16) {
                 sThreadMsg = "此设备不支持特征采集";
                 DebugMsg(sThreadMsg);
@@ -210,7 +213,6 @@ public class VeinUtil {
                 DebugMsg(sThreadMsg);
             }
         } else {
-            PlayVoice(VeinApi.XG_VOICE_BEEP1, true);
             sThreadMsg = "特征采集成功";
             DebugMsg(sThreadMsg);
             Log.e("TAG", "userVeinInfos: " + userVeinInfos.size());
@@ -266,7 +268,6 @@ public class VeinUtil {
         while (isCollect) {
             ssChara[CharaNum] = VeinApi.GetVeinChara(DevHandle, 6000);//通过指静脉设备采集特征，等待手指放入超时为6秒
             if (ssChara[CharaNum].length() < 10) {
-                PlayVoice(VeinApi.XG_VOICE_BEEP11, true);
                 try {
                     error = Integer.parseInt(ssChara[CharaNum]);
                 } catch (NumberFormatException e) {
@@ -302,8 +303,6 @@ public class VeinUtil {
                 }
             } else {
                 error = 0;
-                PlayVoice(VeinApi.XG_VOICE_BEEP1, true);
-
                 //通过增加特征的这个函数来创建模板，一个模板最多可以增加6个特征，等同于FVCreateVeinTemp
                 ssTemp = VeinApi.FVAddCharaToTemp(ssTemp, ssChara[CharaNum], null, 0);
                 if (ssTemp.length() < 10) {
