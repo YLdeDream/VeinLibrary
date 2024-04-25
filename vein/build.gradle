@@ -26,9 +26,6 @@ android {
         lintOptions {
             disable 'NullSafeMutableLiveData'
         }
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
-
     }
 
     buildTypes {
