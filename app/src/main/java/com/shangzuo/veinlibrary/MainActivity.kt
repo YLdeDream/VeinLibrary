@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
             val result = veinUtil.connetVien(this@MainActivity)
             veinUtil.getAllUsers(VeinUrl.getUserUrl)
             Log.e("TAG", "connetVien: $result")
-          //  veinUtil.toVerify()
+            veinUtil.toVerify()
         }
         startActivity(Intent(this,VeinActivity::class.java))
     }
