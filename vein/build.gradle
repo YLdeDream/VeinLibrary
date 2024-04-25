@@ -3,7 +3,18 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'maven-publish'
 }
-
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.YLdeDream'
+                artifactId = 'veindemo'
+                version = '1.0.2'
+            }
+        }
+    }
+}
 android {
     namespace 'com.shangzuo.veindemo'
     compileSdk 33
@@ -12,8 +23,12 @@ android {
         //applicationId "com.shangzuo.veindemo"
         minSdk 23
         targetSdk 33
-
+        lintOptions {
+            disable 'NullSafeMutableLiveData'
+        }
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
     }
 
     buildTypes {
