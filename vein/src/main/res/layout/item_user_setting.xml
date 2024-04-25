@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+
+        <View style="@style/verticalLine" />
+
+        <TextView
+            android:id="@+id/tv_num"
+            style="@style/tableItemStytle"
+            android:layout_weight="1"
+            android:text="/" />
+
+        <View style="@style/verticalLine" />
+        <TextView
+            android:id="@+id/tv_no"
+            style="@style/tableItemStytle"
+            android:layout_weight="2"
+            android:text="工号" />
+
+
+        <View style="@style/verticalLine" />
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/tableItemStytle"
+            android:layout_weight="2"
+            android:text="姓名" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/lineColor" />
+
+
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/lineColor" />
+
+        <RelativeLayout
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:visibility="visible"
+                android:id="@+id/tv_vein1"
+                style="@style/userItem"
+                android:text="指静脉1采集" />
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_vein1_recode"
+                android:layout_centerInParent="true"
+                android:padding="8dp"
+                android:textColor="@color/mainColor"
+                android:textStyle="bold"
+                android:background="@drawable/shape_edittext"
+                android:text="指静脉1录入"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/lineColor" />
+
+        <RelativeLayout
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:visibility="visible"
+                android:id="@+id/tv_vein2"
+                style="@style/userItem"
+                android:text="指静脉2采集" />
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_vein2_recode"
+                android:layout_centerInParent="true"
+                android:padding="8dp"
+                android:textColor="@color/mainColor"
+                android:textStyle="bold"
+                android:background="@drawable/shape_edittext"
+                android:text="指静脉2录入"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/lineColor" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/lineColor" />
+</LinearLayout>
