@@ -19,14 +19,14 @@ class MainActivity : AppCompatActivity() {
         val veinUtil = VeinUtil.getInstance()
 
 
-        GlobalScope.launch {
-            veinUtil.SerachUSB(this@MainActivity)
-            delay(1000)
-            val result = veinUtil.connetVien(this@MainActivity)
-            veinUtil.getAllUsers(VeinUrl.getUserUrl)
-            Log.e("TAG", "connetVien: $result")
-            veinUtil.toVerify()
-        }
-        startActivity(Intent(this,VeinActivity::class.java))
+//        GlobalScope.launch {
+//            veinUtil.SerachUSB(this@MainActivity)
+//            delay(1000)
+//            val result = veinUtil.connetVien(this@MainActivity)
+//            veinUtil.getAllUsers(VeinUrl.getUserUrl)
+//            Log.e("TAG", "connetVien: $result")
+//            veinUtil.toVerify()
+//        }
+     //   startActivity(Intent(this,VeinActivity::class.java))
     }
 }
