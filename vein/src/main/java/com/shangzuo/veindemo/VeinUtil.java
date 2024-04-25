@@ -164,6 +164,10 @@ public class VeinUtil {
         @Override
         public void run() {
             while (true) {
+                if (DevHandle <= 0) {
+                    DebugMsg("请先连接设备");
+                    return;
+                }
                 GetChara();
             }
         }
